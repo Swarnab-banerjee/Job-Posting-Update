@@ -27,14 +27,14 @@ public with sharing class PositionEventTriggerHandler extends ExtendedTriggerHan
     }
 
     /**
-     * @description After update trigger logic
+     * @description After update trigger
      */
     public override void afterUpdate() {
         try {
             publishPositionEvent();
         } catch (Exception e) {
-            // Log the exception to understand what's going wrong
-            System.debug('Error in publishing Position Event: ' + e.getMessage());
+            // System.debug('Error in publishing Position Event: ' + e.getMessage());
+            LoggerException.logException(e, 'ERROR');
         }
     }
 
@@ -74,12 +74,12 @@ public with sharing class PositionEventTriggerHandler extends ExtendedTriggerHan
             // Only publish an event if there are changes
             if (!changes.isEmpty()) {
                 Position_Update__e event = new Position_Update__e(
-                    Position_Id__c     = newPosition.Id,
-                    Updated_By__c      = UserInfo.getUserId(),
-                    Updated_Fields__c  = String.join(changes, '\n'),
-                    Old_Values__c      = JSON.serialize(oldValues),
-                    New_Values__c      = JSON.serialize(newValues),
-                    Timestamp__c       = System.now()
+                    Position_Id__c = newPosition.Id,
+                    Updated_By__c = UserInfo.getUserId(),
+                    Updated_Fields__c = String.join(changes, '\n'),
+                    Old_Values__c = JSON.serialize(oldValues),
+                    New_Values__c = JSON.serialize(newValues),
+                    Timestamp__c = System.now()
                 );
 
                 positionEvents.add(event);
