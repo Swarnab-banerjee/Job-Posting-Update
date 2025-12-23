@@ -1,8 +1,8 @@
 /**
- * @description       : 
+ * @description       : Test Class for PositionTrigger
  * @author            : Swarnab Banerjee
  * @group             : 
- * @last modified on  : 12-12-2025
+ * @last modified on  : 12-23-2025
  * @last modified by  : Swarnab Banerjee
 **/
 @isTest
@@ -14,6 +14,10 @@ public with sharing class PositionTriggerTest {
         insert position;
     }
 
+    /**
+    * @description : Updates the Fields of Position__c and checks the Size and Position ID of the Published Event
+    * @author Swarnab Banerjee | 12-23-2025 
+    **/
     @isTest
     static void testPositionTrigger() {
 

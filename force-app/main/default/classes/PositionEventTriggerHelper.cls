@@ -1,8 +1,8 @@
 /**
- * @description       : 
+ * @description       : Helper Class for Prcessing Changed values and Publishing Platform Event
  * @author            : Swarnab Banerjee
  * @group             : 
- * @last modified on  : 12-12-2025
+ * @last modified on  : 12-23-2025
  * @last modified by  : Swarnab Banerjee
 **/
 public with sharing class PositionEventTriggerHelper {
@@ -21,7 +21,7 @@ public with sharing class PositionEventTriggerHelper {
             Map<String, Object> oldValues = new Map<String, Object>();
             Map<String, Object> newValues = new Map<String, Object>();
 
-            // Loop over specific fields we care about: Status, Open Date, Type
+            // Loop over specific fields on the List
             for(String fieldName : TARGET_FIELDS) {
                 Object oldVal = oldPosition.get(fieldName);
                 Object newVal = newPosition.get(fieldName);

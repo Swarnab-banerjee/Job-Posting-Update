@@ -1,8 +1,8 @@
 /**
- * @description       : 
+ * @description       : Position Trigger Handler Class
  * @author            : Swarnab Banerjee
  * @group             : 
- * @last modified on  : 12-12-2025
+ * @last modified on  : 12-23-2025
  * @last modified by  : Swarnab Banerjee
 **/
 public with sharing class PositionEventTriggerHandler extends ExtendedTriggerHandler {
@@ -10,7 +10,7 @@ public with sharing class PositionEventTriggerHandler extends ExtendedTriggerHan
     private final static String POSITION_EVENT_TRIGGER = 'PositionTrigger';
 
     /**
-     * @description Check if the trigger is enabled from metadata
+     * @description : Check if the trigger is enabled from metadata
      *@return
      */
     public override boolean isTriggerEnabled() {
@@ -26,7 +26,7 @@ public with sharing class PositionEventTriggerHandler extends ExtendedTriggerHan
     }
 
     /**
-     * @description After update trigger
+     * @description : After update trigger
      */
     public override void afterUpdate() {
         try {
